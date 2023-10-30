@@ -1,0 +1,59 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+# config/routes.yaml
+
+app_home:
+    path: /home
+    controller: App\Controller\HomeController::index
+    
+app_service:
+    path: /service
+    controller: App\Controller\ServiceController::index
+
+app_show_service:
+    path: /service/show/{name}
+    controller: App\Controller\ServiceController::showService
+
+app_go_to_index:
+    path: /service/goToIndex
+    controller: App\Controller\ServiceController::goToIndex
+
+show_author:
+    path: '/author/{name}'
+    controller: App\Controller\AuthorController::showAuthor
+    
+list_authors:
+    path: /authors
+    controller: 'App\Controller\AuthorController::list'
+    methods: ['GET']
+
+author_details:
+    path: /details/{id}
+    controller: App\Controller\AuthorController::authorDetails
+    methods: ['GET']
+
+fetch:
+    path: /fetch
+    controller: App\Controller\StudentController::fetch
+
+add:
+    path: /add
+    controller: App\Controller\StudentController::add
+
+app_student:
+    path: /student
+    controller: App\Controller\StudentController::index
+
+remove:
+    path: '/remove/{id}'
+    controller: App\Controller\StudentController::remove
+
+addF:
+    path: /addF
+    controller: App\Controller\StudentController::addF
+
+edit:
+    path: '/edit/{id}'
+    controller: App\Controller\StudentController::edit

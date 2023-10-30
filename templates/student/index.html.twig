@@ -1,0 +1,30 @@
+<h1>{{ 'La Liste des étudiants'|upper }}</h1>
+<table style="border-collapse: collapse; border: 1px solid #999;">
+    <thead>
+        <tr>
+            <th style="font-weight: normal; padding: 8px; border: 1px solid #999;">ID</th>
+            <th style="font-weight: normal; padding: 8px; border: 1px solid #999;">NAME</th>
+            <th style="font-weight: normal; padding: 8px; border: 1px solid #999;">EMAIL</th>
+            <th style="font-weight: normal; padding: 8px; border: 1px solid #999;">AGE</th>
+            <th style="font-weight: normal; padding: 8px; border: 1px solid #999;">Classroom</th>
+            <th style="font-weight: normal; padding: 8px; border: 1px solid #999;">ACTION</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for student in students %}
+            <tr>
+                <td style="padding: 8px; border: 1px solid #999;">{{ student.id }}</td>
+                <td style="padding: 8px; border: 1px solid #999;">{{ student.name }}</td>
+                <td style="padding: 8px; border: 1px solid #999;">{{ student.email }}</td>
+                <td style="padding: 8px; border: 1px solid #999;">{{ student.age }}</td>
+                <td style="padding: 8px; border: 1px solid #999;">{{ student.classroom }}</td>
+                <td style="padding: 8px; border: 1px solid #999;">
+                    <a href="{{ path('edit', {'id': student.id}) }}" style="display: inline-block; padding: 6px 12px; background-color: blue; color: white; text-decoration: none;">Edit</a>
+                    <a href="{{ path('remove', {'id': student.id}) }}" style="display: inline-block; padding: 6px 12px; background-color: red; color: white; text-decoration: none;">Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ path('addF') }}" style="display: inline-block; padding: 6px 12px; background-color: blue; color: white; text-decoration: none;">Add Student</a>
